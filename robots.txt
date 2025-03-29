@@ -1,42 +1,101 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
+# Файл robots.txt ultra-optimisé - Effektivnoe-distantsionnoe-snyatie-porchi.github.io
+# Версия 2.0 - Март 2025 | Адаптировано под: Яндекс, Google, голосовые ассистенты, ИИ-краулеры
+
+#######################################
+### ⚡ РЕКОМЕНДАЦИИ ДЛЯ МАКСИМАЛЬНОЙ ЭФФЕКТИВНОСТИ:
+### 1. Проверять в Яндекс.Вебмастере ЕЖЕМЕСЯЧНО
+### 2. Обновлять при добавлении новых разделов
+### 3. Сочетать с XML-картой сайта
+### 4. Для AMP-страниц использовать отдельные правила
+#######################################
+
+############################
+### 1. ОСНОВНЫЕ ПРАВИЛА (ВСЕ БОТЫ)
+############################
 User-agent: *
+Disallow: /admin/              # ✔️ Запрет доступа к админке
+Disallow: /tmp/                # ✔️ Блокировка временных файлов
+Disallow: /search/             # ✔️ Поиск по сайту (дубли)
+Disallow: /*?*                 # ✔️ Фильтрация URL с параметрами
+Disallow: /personal/           # ✔️ NEW: Личные кабинеты
+
+Allow: /*.css$                 # ✔️ Критические стили
+Allow: /*.js$                  # ✔️ Обязательные скрипты
+Allow: /*.webp$                # ✔️ Современные изображения
+Allow: /                       # ✔️ Главное разрешение
+
+############################
+### 2. ОПТИМИЗАЦИЯ ДЛЯ ЯНДЕКСА (ОСНОВНОЙ ПРИОРИТЕТ)
+############################
+User-agent: Yandex
 Disallow: /admin/
-Disallow: /tmp/
-Disallow: /private/
+Allow: /ritualy/               # ★ Страницы ритуалов
+Allow: /diagnostika/           # ★ Диагностика порчи
+Allow: /otzyvy/                # ★ Реальные отзывы
+Allow: /snyatie-porchi-v-moskve/ # ★ NEW: Локализация
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
+User-agent: YandexImages
+Allow: /images/                # ✔️ Специальная папка для изображений
 
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
+User-agent: YandexMobileBot
+Allow: /mobilnaya-versiya/     # ✔️ NEW: Мобильная версия
+Disallow: /admin/
 
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
+Crawl-delay: 0.8               # ✔️ Оптимально для Яндекса
 
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
+############################
+### 3. GOOGLE (ВКЛЮЧАЯ GOOGLE AI)
+############################
 User-agent: Googlebot
-Allow: /
-User-agent: AdsBot-Google
-Allow: /
-User-agent: Bingbot
-Allow: /
+Allow: /ritualy/
+Allow: /zashchita/
+Allow: /snyatie-porchi/
+Allow: /blog/                  # ✔️ NEW: SEO-блог
 
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
+User-agent: Googlebot-News
+Allow: /novosti/               # ✔️ Для новостей
+
+User-agent: Googlebot-Voice
+Allow: /faq/                   # ★ Ответы на вопросы
+Allow: /sovety/                # ★ Советы экстрасенса
+Allow: /step-by-step/          # ✔️ NEW: Пошаговые инструкции
+
+############################
+### 4. ЗАЩИТА ОТ ВРЕДОНОСНЫХ БОТОВ
+############################
+User-agent: AhrefsBot
 Disallow: /
-User-agent: EvilScraper
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: Mail.RU_Bot        # ★ Особенно для Рунета
 Disallow: /
 
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+############################
+### 5. ИИ-КРАУЛЕРЫ 2025 (СТРАТЕГИЯ)
+############################
+User-agent: GPTBot
+Allow: /blog/                  # ✔️ Разрешить только блог
+Disallow: /client/             # ✔️ Защита данных
+
+User-agent: OpenAI-Crawler
+Disallow: /otzyvy/             # ★ Защита от копирования отзывов
+Allow: /public-info/           # ✔️ Общая информация
+
+############################
+### 6. ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ
+############################
+Sitemap: https://clairvoyancemedium.github.io/Effektivnoe-distantsionnoe-snyatie-porchi.github.io/sitemap.xml
+Sitemap: https://clairvoyancemedium.github.io/Effektivnoe-distantsionnoe-snyatie-porchi.github.io/sitemap-images.xml # ✔️ NEW
+
+Crawl-delay: 0.7               # ✔️ Баланс скорости и индексации
+
+#######################################
+### ★ КЛЮЧЕВЫЕ РЕКОМЕНДАЦИИ:
+### 1. Для Яндекс: Добавлять новые города (/snyatie-porchi-v-kazani/)
+### 2. Создать отдельный robots.txt для мобильной версии
+### 3. Добавить hreflang для СНГ (Украина, Казахстан)
+### 4. Обновлять после каждого изменения структуры сайта
+### 5. Использовать Яндекс.Вебмастер для мониторинга
+#######################################
